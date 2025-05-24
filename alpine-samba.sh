@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -s https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
 # Copyright (c) 2021-2025 community-scripts ORG
 # Adapted for Samba Alpine LXC setup by User & AI Assistant
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
@@ -16,7 +16,7 @@ var_unprivileged="${var_unprivileged:-1}" # Default to unprivileged (recommended
 
 # --- Samba Specific Configuration ---
 # These can be overridden by exporting them before running the script, e.g., export var_samba_share_name="MyData"
-var_samba_share_name="${var_samba_share_name:-SanDiskDrive}"      # Name of the Samba share
+var_samba_share_name="${var_samba_share_name:-Samba}"            # Name of the Samba share
 var_host_share_path="${var_host_share_path:-}"                   # IMPORTANT: ABSOLUTE path on Proxmox HOST for bind mount data.
                                                                  # Example: /mnt/pve/my_shared_drive
                                                                  # LEAVE EMPTY to store share data inside the LXC's own disk.
